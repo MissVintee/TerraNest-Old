@@ -1,5 +1,5 @@
 # TerraNest 🌍  
-### Empowering Sustainability, Uniting Communities  
+### Empowering Sustainability, Assembling Communities, Companies & Organizations over one Platform  
 
 ## About TerraNest  
 TerraNest is a *Flutter-based mobile application* designed to connect sustainable businesses with conscious consumers. It provides a marketplace for eco-friendly products, promotes grassroots entrepreneurship, and encourages responsible consumption.  
