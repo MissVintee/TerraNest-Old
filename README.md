@@ -14,9 +14,16 @@ TerraNest is a *Flutter-based mobile application* designed to connect sustainabl
 
 ## Technology Stack  
 - *Frontend:* Flutter (Dart)  
-- *Backend:*   
-- *Machine Learning:* Product recommendation & sustainability impact analysis
+- *Backend:* FireBase
+- *AI & ML:* TensorFlow, Vertex AI, Google AI
+- *Cloud:* Google Cloud
+- *Platform:* VS code, Project IDX
+- *Version Control:* Git, Gituhub
 
-## Contributors - EcoPulse Team
-- Vintee Chauhan
+## Contributors 2025 - EcoPulse Team
+- Vintee Chauhan (TeamLead)
 - Pankaj Dhurandhar
+- Ashish Guru
+
+## Youtube Link
+ https://youtube.com/@terranest?si=43D4bTJU6G40f5V6
