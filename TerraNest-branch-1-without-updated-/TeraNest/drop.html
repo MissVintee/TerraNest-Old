@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dropdown-select:hover {
+            background-color: #e0e0e0;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            z-index: 1;
+        }
+
+        .dropdown-option {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-option:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <select class="dropdown-select" id="languageDropdown">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <!-- Add more language options as needed -->
+        </select>
+        <div class="dropdown-options" id="languageOptions">
+            <div class="dropdown-option" data-value="en">English</div>
+            <div class="dropdown-option" data-value="es">Spanish</div>
+            <div class="dropdown-option" data-value="fr">French</div>
+            <!-- Add more language options as needed -->
+        </div>
+    </div>
+
+    <script>
+        const select = document.getElementById('languageDropdown');
+        const optionsContainer = document.getElementById('languageOptions');
+        const options = document.querySelectorAll('.dropdown-option');
+
+        select.addEventListener('click', () => {
+            optionsContainer.classList.toggle('show');
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                select.value = option.getAttribute('data-value');
+                optionsContainer.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!select.contains(e.target) && !optionsContainer.contains(e.target)) {
+                optionsContainer.classList.remove('show');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

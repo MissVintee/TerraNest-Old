@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(terranest6.jpg); 
+            background-size: cover;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            background-color: rgb(186, 243, 233);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            text-align: center;
+            opacity: 1;
+            transition: transform 0.5s ease, opacity 0.5s ease-in-out;
+        }
+
+        h2 {
+            color: #074115;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.5s ease;
+        }
+
+        label {
+            margin: 10px 0 5px;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        input,
+        select {
+            padding: 12px;
+            background-color:#9be4a9e9;
+            margin-bottom: 20px;
+            border: 1px solid #b7bab5;
+            border-radius: 25px;
+            width: 70%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            font-size: 14px;
+            
+        }
+
+        input:hover,
+        input:focus,
+        select:hover,
+        select:focus {
+            border-color: #012208;
+        }
+
+        button {
+            padding: 14px;
+            background-color: #69cb85;
+            color: #032910;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 45%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #073508;
+            color:#7cd57f;
+        }
+
+        .toggle-form {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #000000;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-form:hover {
+            color: #333;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+
+        .slide-in {
+            transform: translateY(0);
+        }
+
+        .slide-out {
+            transform: translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="signInForm">
+    <h2>Sign In</h2>
+    <form class="slide-in">
+        <label for="signInEmail">Email:</label>
+        <input type="email" id="signInEmail" required>
+
+        <label for="signInPassword">Password:</label>
+        <input type="password" id="signInPassword" required>
+
+        <button type="submit">Sign In</button>
+    </form>
+
+    <p class="toggle-form" onclick="toggleForm('signUpForm')">Don't have an account? Sign Up</p>
+</div>
+
+<div class="container hidden" id="signUpForm">
+    <h2>Sign Up</h2>
+    <form class="slide-out">
+        <label for="signUpName">Name:</label>
+        <input type="text" id="signUpName" required>
+
+        <label for="signUpEmail">Email:</label>
+        <input type="email" id="signUpEmail" required>
+
+        <label for="signUpPassword">Password:</label>
+        <input type="password" id="signUpPassword" required>
+
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" required>
+            <option value="user">User</option>
+            <option value="company">Company</option>
+        </select>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p class="toggle-form" onclick="toggleForm('signInForm')">Already have an account? Sign In</p>
+</div>
+
+<script>
+    function toggleForm(formId) {
+        const signInForm = document.getElementById('signInForm');
+        const signUpForm = document.getElementById('signUpForm');
+
+        if (formId === 'signInForm') {
+            signInForm.classList.remove('slide-out');
+            signInForm.classList.add('slide-in');
+            signUpForm.classList.remove('slide-in');
+            signUpForm.classList.add('slide-out');
+        } else {
+            signInForm.classList.remove('slide-in');
+            signInForm.classList.add('slide-out');
+            signUpForm.classList.remove('slide-out');
+            signUpForm.classList.add('slide-in');
+        }
+
+        setTimeout(() => {
+            signInForm.classList.toggle('hidden');
+            signUpForm.classList.toggle('hidden');
+        }, 500);
+    }
+</script>
+
+</body>
+</html>
