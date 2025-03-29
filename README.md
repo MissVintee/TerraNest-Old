@@ -20,10 +20,8 @@ TerraNest is a *Flutter-based mobile application* designed to connect sustainabl
 - *Platform:* VS code, Project IDX
 - *Version Control:* Git, Gituhub
 
-## Contributors 2025 - EcoPulse Team
+## Contributors 2025 - 
 - Vintee Chauhan (TeamLead)
-- Pankaj Dhurandhar
-- Ashish Guru
 
 ## Youtube Link
  https://youtube.com/@terranest?si=43D4bTJU6G40f5V6
